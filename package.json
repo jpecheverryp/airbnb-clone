@@ -4,7 +4,9 @@
   "description": "Airbnb Clone built using Nuxt.js",
   "main": "index.js",
   "scripts": {
-    "dev": "nuxt"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start"
   },
   "author": "Juan P Echeverry",
   "license": "MIT",
