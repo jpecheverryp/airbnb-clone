@@ -8,16 +8,14 @@
 
 <script>
   import homes from '~/data/homes'
-  import HomeCard from '../components/HomeCard.vue'
+  
   export default {
     data()  {
       return {
         homes: homes.slice(0, 3)
       }
     },
-    components: {
-      HomeCard,
-    }
+    
   }
 </script>
 
