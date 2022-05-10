@@ -22,16 +22,6 @@
     head() {
       return {
         title: this.home.title,
-        script: [{
-          src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDF0-w63EcTVdtJ_rAR3hK8FLARniLupUk&libraries=places&callback=initMap",
-          hid: 'map',
-          async: true,
-          skip: process.client && window.mapLoaded
-        }, {
-          innerHTML: "window.initMap = function() { window.mapLoaded = true }",
-          hid: 'map-init'
-        }
-        ],
       }
     },
     data() {
@@ -39,32 +29,12 @@
         home: {}
       }
     },
-    methods: {
-      showMap() {
-        const mapOptions = {
-          zoom: 18,
-          center: new window.google.maps.LatLng(this.home._geoloc.lat, this.home._geoloc.lng),
-          disableDefaultUI: true,
-          zoomControl: true
-        }
-        const map = new window.google.maps.Map(this.$refs.map, mapOptions)
-        const position = new window.google.maps.LatLng(this.home._geoloc.lat, this.home._geoloc.lng)
-        const marker = new window.google.maps.Marker({ position })
-        marker.setMap(map)
-      }
-    },
     created() {
       const home = homes.find((home) => home.objectID === this.$route.params.id)
       this.home = home
     },
     mounted() {
-      console.log('mounted');
-      const timer = setInterval(() => {
-        if (window.mapLoaded) {
-          clearInterval(timer)
-          this.showMap()
-        }
-      }, 200)
+      this.$maps.showMap(this.$refs.map, this.home._geoloc.lat, this.home._geoloc.lng)
     }
   }
 </script>
