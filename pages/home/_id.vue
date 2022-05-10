@@ -17,15 +17,21 @@
 
 <script>
   import homes from '~/data/homes'
+
   export default {
     head() {
       return {
         title: this.home.title,
         script: [{
-          src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDF0-w63EcTVdtJ_rAR3hK8FLARniLupUk&libraries=places',
+          src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDF0-w63EcTVdtJ_rAR3hK8FLARniLupUk&libraries=places&callback=initMap",
           hid: 'map',
           defer: true,
-        }]
+          skip: process.client && window.mapLoaded
+        }, {
+          innerHTML: "window.initMap = function() { window.mapLoaded = true }",
+          hid: 'map-init'
+        }
+        ],
       }
     },
     data() {
