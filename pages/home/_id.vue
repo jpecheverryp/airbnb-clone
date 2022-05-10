@@ -14,6 +14,11 @@
 <script>
   import homes from '~/data/homes'
   export default {
+    head() {
+      return {
+        title: this.home.title
+      }
+    },
     data() {
       return {
         home: {}
