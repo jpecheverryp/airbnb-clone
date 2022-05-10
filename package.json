@@ -11,6 +11,7 @@
   "author": "Juan P Echeverry",
   "license": "MIT",
   "dependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
     "nuxt": "^2.15.8"
   }
 }

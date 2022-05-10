@@ -1,6 +1,7 @@
 export default function(context, inject) {
   let mapLoaded = false
   let mapWaiting = null
+  const apiKey = process.env.G_MAPS
 
   addScript()
   inject('maps', {
@@ -9,7 +10,7 @@ export default function(context, inject) {
 
   function addScript() {
     const script = document.createElement('script')
-    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDF0-w63EcTVdtJ_rAR3hK8FLARniLupUk&libraries=places&callback=initMap"
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places&callback=initMap`
     script.async = true
     window.initMap = initMap
     document.head.appendChild(script)
