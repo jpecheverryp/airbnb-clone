@@ -5,8 +5,8 @@
     </div>
     {{ home.title }} <br />
     {{ home.pricePerNight }} / night<br />
-    {{home.location.address}} {{home.location.city}} {{home.location.state}} {{home.location.country}}<br/>
-    {{home.reviewValue}} <br/>
+    <img src="/images/marker.svg" width="20" alt="location marker"> {{home.location.address}} {{home.location.city}} {{home.location.state}} {{home.location.country}}<br/>
+    <img src="/images/star.svg" width="20" alt="Review stars"> {{home.reviewValue}} <br/>
     {{home.guests}} guests, {{home.bedrooms}} rooms, {{home.beds}} beds, {{home.bathrooms}} bath <br/>
   </div>
 </template>
