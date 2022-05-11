@@ -23,5 +23,11 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/tailwindcss'
   ],
-  
+  css: ['~/assets/sass/app.scss'],
+  build: {
+    extractCSS: true,
+    loaders: {
+      limit: 0,
+    }
+  }
 }
