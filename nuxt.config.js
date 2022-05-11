@@ -20,9 +20,8 @@ export default {
     '~/plugins/dataApi'
   ],
   buildModules: [
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/tailwindcss'
   ],
-  modules:[
-    []
-  ]
+  
 }

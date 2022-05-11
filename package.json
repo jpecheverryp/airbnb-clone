@@ -13,5 +13,8 @@
   "dependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
     "nuxt": "^2.15.8"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^5.0.4"
   }
 }
