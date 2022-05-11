@@ -23,7 +23,14 @@
     },
     methods: {
       updateMap() {
-        this.$maps.showMap(this.$refs.map, this.lat, this.lng)
+        this.$maps.showMap(this.$refs.map, this.lat, this.lng, this.getHomeMarkers())
+      },
+      getHomeMarkers() {
+        return this.homes.map((home) => {
+          return {
+            ...home._geoloc,
+          }
+        })
       }
     },
     async beforeRouteUpdate(to, from, next){
