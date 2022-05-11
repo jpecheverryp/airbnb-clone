@@ -21,5 +21,8 @@ export default {
   ],
   buildModules: [
     '@nuxtjs/dotenv'
+  ],
+  modules:[
+    []
   ]
 }
