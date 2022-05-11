@@ -1,6 +1,5 @@
 <template>
   <div>
-    Hello
     {{ this.$route.query }}
   </div>
 </template>
